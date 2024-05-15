@@ -1,5 +1,6 @@
-import "game.dart";
+import 'game.dart';
 
 void main() {
-  Game().start();
+  Game game = Game();
+  game.start();
 }
