@@ -5,8 +5,10 @@ class Room {
   String description;
   Map<String, Room> connections = {};
   List<Item> items = [];
+  bool isLocked = false;
+  Item? key;
 
-  Room(this.name, this.description);
+  Room(this.name, this.description, {this.isLocked = false, this.key});
 
   void connectRoom(String direction, Room room) {
     connections[direction.toLowerCase()] = room;

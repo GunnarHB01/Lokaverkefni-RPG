@@ -8,4 +8,12 @@ class Item {
   String toString() {
     return '$name: $description';
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Item && runtimeType == other.runtimeType && name.toLowerCase() == other.name.toLowerCase();
+
+  @override
+  int get hashCode => name.toLowerCase().hashCode;
 }
